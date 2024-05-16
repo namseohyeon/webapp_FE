@@ -1,7 +1,6 @@
 import React, { useState } from "react";
-import {ListItem, ListItemText, InputBase, Button, ListItemButton} from '@mui/material';
 
-const Shoppingitem = ({ item, onDelete }) => {
+const ShoppingitemRow = ({ item, onDelete }) => {
     return (
       <tr >
         <td style={{ padding: '10px', border: '1px solid black' }}>{item.id}</td>
@@ -15,4 +14,4 @@ const Shoppingitem = ({ item, onDelete }) => {
   };
   
 
-export default Shoppingitem;
+export default ShoppingitemRow;
