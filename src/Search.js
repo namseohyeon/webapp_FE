@@ -1,37 +1,57 @@
 import React, { useState } from "react";
-const Search = () => {
+const Search = (props) => {
+  const [item, setItem] = useState({title:"", price:"", topic:"",userid:""});
+  const searchItem = props.searchItem
+
+  const onButtonClick = (e) => {
+    e.preventDefault(); // 페이지 새로고침 방지
+    //setItem({title:"", price:"", topic:"",userid:""});
+    searchItem(item.title).then((data) =>{
+      if(data){
+        setItem(data);
+      }
+    })
+  }
+  const onInputChange = (e) =>{
+    const { name, value } = e.target;
+    //setItem({title:e.target.value});
+    setItem((prevItem) => ({
+      ...prevItem,
+      [name]: value,
+    }));
+  };
     return(
-        <div className="container" style={{ padding: '20px', border: '2px solid black'}}>
-          <form className="search-form">
-            <div className="form-group" style = {{margin:'10px'}}>
-              <label htmlFor="title" style={{
-              display: 'inline-block',
-              width: '100px',
-              textAlign: 'center'}} >title:</label>
-              <input type="text" id="title" name="title" />
-            </div>
-            <div className="form-group" style = {{margin:'10px'}}>
-              <label htmlFor="author" style={{
-              display: 'inline-block',
-              width: '100px',
-              textAlign: 'center'}} >author:</label>
-              <input type="text" id="author" name="author" />
-            </div>
-            <div className="form-group" style = {{margin:'10px'}}>
-              <label htmlFor="publisher" style={{
-              display: 'inline-block',
-              width: '100px',
-              textAlign: 'center'}}>publisher:</label>
-              <input type="text" id="publisher" name="publisher" />
-            </div>
-            <div className="form-group" style = {{margin:'10px'}}>
-              <label htmlFor="userId" style={{
-              display: 'inline-block',
-              width: '100px',
-              textAlign: 'center'}}>userId:</label>
-              <input type="text" id="userId" name="userId" />
-            </div>
-            <button style = {{margin:'10px'}} type="submit" className="search-button">제품 검색</button>
+      <div className="container" style={{ padding: '20px', border: '2px solid black'}}>
+      <form className="search-form">
+        <div className="form-group" style = {{margin:'10px'}}>
+          <label htmlFor="title" style={{
+          display: 'inline-block',
+          width: '100px',
+          textAlign: 'center'}} >title:</label>
+          <input type="text" id="title" name="title" onChange={onInputChange} value={item.title} />
+        </div>
+        <div className="form-group" style = {{margin:'10px'}}>
+          <label htmlFor="price" style={{
+          display: 'inline-block',
+          width: '100px',
+          textAlign: 'center'}} >price:</label>
+          <input type="number" id="price" name="price" onChange={onInputChange} value={item.price} />
+        </div>
+        <div className="form-group" style = {{margin:'10px'}}>
+          <label htmlFor="topic" style={{
+          display: 'inline-block',
+          width: '100px',
+          textAlign: 'center'}}>topic:</label>
+          <input type="text" id="topic" name="topic" onChange={onInputChange} value={item.topic} />
+        </div>
+        <div className="form-group" style = {{margin:'10px'}}>
+          <label htmlFor="userId" style={{
+          display: 'inline-block',
+          width: '100px',
+          textAlign: 'center'}}>userid:</label>
+          <input type="text" id="userid" name="userid" onChange={onInputChange} value={item.userid} />
+        </div>
+            <button style = {{margin:'10px'}} type="submit" className="search-button" onClick={onButtonClick}>제품 검색</button>
           </form>
         </div>
       );
