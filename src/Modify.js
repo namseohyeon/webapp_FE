@@ -38,12 +38,13 @@ const Modify = (props) => {
   };
   
   return(
-    <div className="container" style={{ padding: '20px', border: '2px solid black' }}>
+    <div className="container" style={{ padding: '20px'}}>
       <form className="search-form">
         <div className="form-group" style={{ margin: '10px' }}>
           <label htmlFor="title" style={{
             display: 'inline-block',
             width: '100px',
+            fontWeight: 'bold',
             textAlign: 'center'
           }}>title:</label>
           <input type="text" id="title" name="title" onChange={onInputChange} value={item.title} />
@@ -52,6 +53,7 @@ const Modify = (props) => {
           <label htmlFor="price" style={{
             display: 'inline-block',
             width: '100px',
+            fontWeight: 'bold',
             textAlign: 'center'
           }}>price:</label>
           <input type="number" id="price" name="price" onChange={onInputChange} value={item.price}  />
@@ -60,6 +62,7 @@ const Modify = (props) => {
           <label htmlFor="topic" style={{
             display: 'inline-block',
             width: '100px',
+            fontWeight: 'bold',
             textAlign: 'center'
           }}>topic:</label>
           <input type="text" id="topic" name="topic" onChange={onInputChange} value={item.topic}  />
@@ -68,6 +71,7 @@ const Modify = (props) => {
           <label htmlFor="userid" style={{
             display: 'inline-block',
             width: '100px',
+            fontWeight: 'bold',
             textAlign: 'center'
           }}>userid:</label>
           <input type="text" id="userid" name="userid" onChange={onInputChange} value={item.userid}  />

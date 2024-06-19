@@ -1,14 +1,16 @@
 import React, { useState } from "react";
 
-const ShoppingitemColumm = ({ item, onDelete }) => {
+const ShoppingitemColumm = () => {
   return (
-    <tr>
-      <th style={{ padding: '10px', border: '1px solid black' }}>id</th>
-      <th style={{ padding: '10px', border: '1px solid black' }}>title</th>
-      <th style={{ padding: '10px', border: '1px solid black' }}>price</th>
-      <th style={{ padding: '10px', border: '1px solid black' }}>topic</th>
-      <th style={{ padding: '10px', border: '1px solid black' }}>userid</th>
-          {/* <th style={{ padding: '10px', border: '1px solid black' }}>삭제 버튼</th> */}
+    <tr className="table-header">
+      <th style={{border:"0px"}}>id</th>
+      <th style={{  }}>title</th>
+      <th style={{  }}>price</th>
+      <th style={{  }}>topic</th>
+      <th style={{  }}>userId</th>
+      <th style={{  }}>userName</th>
+      <th style={{  }}>liked</th>
+      <th style={{  }}>Delete</th>
     </tr>
   );
 };

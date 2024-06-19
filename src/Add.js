@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 
 const Add = (props) => {
-  const [item, setItem] = useState({title:"", price:"", topic:"",userid:""})
+  const [item, setItem] = useState({title:"", price:"", topic:"",userId:"",userName:""})
   const addItem = props.addItem;
 
 
   const onButtonClick = (e) => {
     e.preventDefault(); // 페이지 새로고침 방지
     addItem(item);
-    setItem({title:"", price:"", topic:"",userid:""});
+    setItem({title:"", price:"", topic:"",userId:"",userName:""});
     //const { name, value } = e.target;
     // setItem(prevState => ({
     //   ...prevState,
@@ -24,19 +24,22 @@ const Add = (props) => {
     console.log({[name]: value});
   }
   return(
-    <div className="container" style={{ padding: '20px', border: '2px solid black'}}>
+    <div className="container" style={{ padding: '20px'}}>
       <form className="search-form">
         <div className="form-group" style = {{margin:'10px'}}>
           <label htmlFor="title" style={{
           display: 'inline-block',
           width: '100px',
-          textAlign: 'center'}} >title:</label>
+          textAlign: 'center',
+          fontWeight: 'bold',
+          }} >title:</label>
           <input type="text" id="title" name="title" onChange={onInputChange} value={item.title} />
         </div>
         <div className="form-group" style = {{margin:'10px'}}>
           <label htmlFor="price" style={{
           display: 'inline-block',
           width: '100px',
+          fontWeight: 'bold',
           textAlign: 'center'}} >price:</label>
           <input type="number" id="price" name="price" onChange={onInputChange} value={item.price} />
         </div>
@@ -44,6 +47,7 @@ const Add = (props) => {
           <label htmlFor="topic" style={{
           display: 'inline-block',
           width: '100px',
+          fontWeight: 'bold',
           textAlign: 'center'}}>topic:</label>
           <input type="text" id="topic" name="topic" onChange={onInputChange} value={item.topic} />
         </div>
@@ -51,10 +55,11 @@ const Add = (props) => {
           <label htmlFor="userId" style={{
           display: 'inline-block',
           width: '100px',
-          textAlign: 'center'}}>userid:</label>
-          <input type="text" id="userid" name="userid" onChange={onInputChange} value={item.userid} />
+          fontWeight: 'bold',
+          textAlign: 'center'}}>userName:</label>
+          <input type="text" id="userName" name="userName" onChange={onInputChange} value={item.userName} />
         </div>
-        <button style = {{margin:'10px'}} type="submit" className="search-button" onClick={onButtonClick}>제품 추가</button>
+        <button className="action-button" style = {{margin:'10px'}} type="submit"  onClick={onButtonClick}>제품 추가</button>
       </form>
     </div>
   );

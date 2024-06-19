@@ -16,16 +16,17 @@ const Delete = (props) => {
 
   
   return (
-    <div className="container" style={{ padding: '20px', border: '2px solid black' }}>
+    <div className="container" style={{ padding: '20px'}}>
       <form className="search-form">
         <div className="form-group" >
           <label htmlFor="title" style={{
           display: 'inline-block',
           width: '100px',
+          fontWeight: 'bold',
           textAlign: 'center'}} >title:</label>
           <input type="text" id={item.id} name ={item.id} value={item.title} onChange={onInputChange} />
         </div>
-        <button style = {{margin:'10px'}} type="submit" className="delete-button" onClick={deleteEventHandler}>제품 삭제</button>
+        <button style = {{margin:'10px'}} type="submit" className="action-button" onClick={deleteEventHandler}>제품 삭제</button>
       </form>
     </div>
   );}
