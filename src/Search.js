@@ -52,8 +52,8 @@ const Search = (props) => {
           display: 'inline-block',
           width: '100px',
           fontWeight: 'bold',
-          textAlign: 'center'}}>userid:</label>
-          <input type="text" id="userid" name="userid" onChange={onInputChange} value={item.userid} />
+          textAlign: 'center'}}>userName:</label>
+          <input type="text" id="userName" name="userName" onChange={onInputChange} value={item.userName} />
         </div>
             <button style = {{margin:'10px'}} type="submit" className="action-button" onClick={onButtonClick}>제품 검색</button>
           </form>

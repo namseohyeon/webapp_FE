@@ -24,7 +24,7 @@ const Modify = (props) => {
       }else{
         console.error("Failed to modify item");
       }});
-    setItem({title:"", price:"", topic:"",userid:""});
+    setItem({title:"", price:"", topic:"",userid:"", userName:""});
   }
 
   
@@ -67,17 +67,16 @@ const Modify = (props) => {
           }}>topic:</label>
           <input type="text" id="topic" name="topic" onChange={onInputChange} value={item.topic}  />
         </div>
-        <div className="form-group" style={{ margin: '10px' }}>
-          <label htmlFor="userid" style={{
-            display: 'inline-block',
-            width: '100px',
-            fontWeight: 'bold',
-            textAlign: 'center'
-          }}>userid:</label>
-          <input type="text" id="userid" name="userid" onChange={onInputChange} value={item.userid}  />
+        <div className="form-group" style = {{margin:'10px'}}>
+          <label htmlFor="userId" style={{
+          display: 'inline-block',
+          width: '100px',
+          fontWeight: 'bold',
+          textAlign: 'center'}}>userName:</label>
+          <input type="text" id="userName" name="userName" onChange={onInputChange} value={item.userName} />
         </div>
-        <button style={{ margin: '10px' }} type="button" className="search-button" onClick={onSearchButtonClick}>제품 검색</button>
-        <button style={{ margin: '10px' }} type="button" className="search-button" onClick={onModifyButtonClick}>제품 수정</button>
+        <button style={{ margin: '10px' }} type="button" className="action-button" onClick={onSearchButtonClick}>제품 검색</button>
+        <button style={{ margin: '10px' }} type="button" className="action-button" onClick={onModifyButtonClick}>제품 수정</button>
       </form>
     </div>
   );
